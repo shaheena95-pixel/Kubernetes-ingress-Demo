@@ -1,0 +1,106 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <title>HiQode – Orders</title>
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <style>
+    * { margin:0; padding:0; box-sizing:border-box; }
+    body {
+      min-height: 100vh;
+      background: linear-gradient(135deg, #0a1f0a 0%, #0f3320 50%, #081a0a 100%);
+      display: flex; align-items: center; justify-content: center;
+      font-family: 'Segoe UI', sans-serif;
+    }
+    .badge {
+      position: fixed; top: 18px; right: 24px;
+      background: rgba(0,255,150,0.10); border: 1px solid rgba(0,255,150,0.4);
+      color: #00ff96; font-size: 12px; font-weight: 700;
+      letter-spacing: 2px; padding: 6px 16px; border-radius: 20px;
+      text-transform: uppercase;
+    }
+    .card {
+      background: rgba(255,255,255,0.04);
+      border: 1px solid rgba(0,255,150,0.2);
+      border-radius: 20px; padding: 40px 44px;
+      width: 520px;
+      box-shadow: 0 0 60px rgba(0,200,100,0.12), 0 30px 80px rgba(0,0,0,0.5);
+      backdrop-filter: blur(20px);
+    }
+    .icon { font-size: 48px; margin-bottom: 10px; text-align: center; }
+    .app-name {
+      font-size: 12px; letter-spacing: 3px; text-transform: uppercase;
+      color: #00ff96; margin-bottom: 4px; font-weight: 700; text-align: center;
+    }
+    h1 { font-size: 26px; color: #fff; font-weight: 700; margin-bottom: 28px; text-align: center; }
+    table { width: 100%; border-collapse: collapse; }
+    thead th {
+      text-align: left; font-size: 11px; letter-spacing: 2px;
+      text-transform: uppercase; color: rgba(255,255,255,0.4);
+      padding: 0 0 12px; border-bottom: 1px solid rgba(0,255,150,0.15);
+    }
+    tbody tr { border-bottom: 1px solid rgba(255,255,255,0.05); }
+    tbody td { padding: 13px 0; font-size: 14px; color: rgba(255,255,255,0.85); }
+    .status {
+      display: inline-block; padding: 3px 12px; border-radius: 20px;
+      font-size: 11px; font-weight: 700; letter-spacing: 1px;
+    }
+    .shipped  { background: rgba(0,255,150,0.15); color: #00ff96; border: 1px solid rgba(0,255,150,0.3); }
+    .pending  { background: rgba(255,200,0,0.12);  color: #ffc800; border: 1px solid rgba(255,200,0,0.3); }
+    .processing { background: rgba(0,150,255,0.12);color: #00c8ff; border: 1px solid rgba(0,150,255,0.3); }
+    .total-row td { color: #fff; font-weight: 700; font-size: 15px; padding-top: 18px; }
+    .footer { margin-top: 24px; text-align: center; font-size: 11px; color: rgba(255,255,255,0.25); letter-spacing: 1px; }
+    .pod-info {
+      position: fixed; bottom: 18px; left: 50%; transform: translateX(-50%);
+      background: rgba(0,0,0,0.5); border: 1px solid rgba(0,255,150,0.2);
+      color: rgba(255,255,255,0.5); font-size: 11px; padding: 6px 18px;
+      border-radius: 20px; letter-spacing: 1px;
+    }
+  </style>
+</head>
+<body>
+  <div class="badge">🟢 ORDER SERVICE</div>
+  <div class="card">
+    <div class="icon">📦</div>
+    <div class="app-name">HiQode Platform</div>
+    <h1>My Orders</h1>
+    <table>
+      <thead>
+        <tr>
+          <th>Order ID</th>
+          <th>Item</th>
+          <th>Amount</th>
+          <th>Status</th>
+        </tr>
+      </thead>
+      <tbody>
+        <tr>
+          <td>#ORD-1001</td>
+          <td>AWS Course</td>
+          <td>₹4,999</td>
+          <td><span class="status shipped">Shipped</span></td>
+        </tr>
+        <tr>
+          <td>#ORD-1002</td>
+          <td>K8s Bootcamp</td>
+          <td>₹6,499</td>
+          <td><span class="status processing">Processing</span></td>
+        </tr>
+        <tr>
+          <td>#ORD-1003</td>
+          <td>DevOps Bundle</td>
+          <td>₹9,999</td>
+          <td><span class="status pending">Pending</span></td>
+        </tr>
+        <tr class="total-row">
+          <td colspan="2">Total</td>
+          <td>₹21,497</td>
+          <td></td>
+        </tr>
+      </tbody>
+    </table>
+    <div class="footer">INGRESS DEMO &nbsp;|&nbsp; PATH: /order</div>
+  </div>
+  <div class="pod-info">📦 Pod: order-app &nbsp;|&nbsp; Namespace: hiqode</div>
+</body>
+</html>

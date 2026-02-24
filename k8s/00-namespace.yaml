@@ -1,0 +1,11 @@
+# ─────────────────────────────────────────────
+#  NAMESPACE
+#  kubectl apply -f 00-namespace.yaml
+# ─────────────────────────────────────────────
+
+apiVersion: v1
+kind: Namespace
+metadata:
+  name: hiqode
+  labels:
+    app: hiqode-demo

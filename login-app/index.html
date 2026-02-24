@@ -1,0 +1,83 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <title>HiQode – Login</title>
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <style>
+    * { margin:0; padding:0; box-sizing:border-box; }
+    body {
+      min-height: 100vh;
+      background: linear-gradient(135deg, #0a0f2c 0%, #0d1b4b 50%, #091428 100%);
+      display: flex; align-items: center; justify-content: center;
+      font-family: 'Segoe UI', sans-serif;
+    }
+    .badge {
+      position: fixed; top: 18px; right: 24px;
+      background: rgba(0,200,255,0.12); border: 1px solid rgba(0,200,255,0.4);
+      color: #00c8ff; font-size: 12px; font-weight: 700;
+      letter-spacing: 2px; padding: 6px 16px; border-radius: 20px;
+      text-transform: uppercase;
+    }
+    .card {
+      background: rgba(255,255,255,0.04);
+      border: 1px solid rgba(0,200,255,0.2);
+      border-radius: 20px; padding: 48px 44px;
+      width: 420px; text-align: center;
+      box-shadow: 0 0 60px rgba(0,150,255,0.15), 0 30px 80px rgba(0,0,0,0.5);
+      backdrop-filter: blur(20px);
+    }
+    .icon { font-size: 52px; margin-bottom: 10px; }
+    .app-name {
+      font-size: 13px; letter-spacing: 3px; text-transform: uppercase;
+      color: #00c8ff; margin-bottom: 6px; font-weight: 700;
+    }
+    h1 { font-size: 28px; color: #fff; font-weight: 700; margin-bottom: 32px; }
+    .field { margin-bottom: 18px; text-align: left; }
+    .field label { display: block; color: rgba(255,255,255,0.6); font-size: 13px; margin-bottom: 7px; letter-spacing: 0.5px; }
+    .field input {
+      width: 100%; padding: 13px 16px;
+      background: rgba(255,255,255,0.06); border: 1px solid rgba(0,200,255,0.25);
+      border-radius: 10px; color: #fff; font-size: 15px; outline: none;
+      transition: border-color 0.2s, box-shadow 0.2s;
+    }
+    .field input:focus { border-color: #00c8ff; box-shadow: 0 0 0 3px rgba(0,200,255,0.15); }
+    .btn {
+      width: 100%; padding: 14px;
+      background: linear-gradient(90deg, #00c8ff, #0072ff);
+      border: none; border-radius: 10px; color: #fff;
+      font-size: 16px; font-weight: 700; cursor: pointer;
+      letter-spacing: 1px; margin-top: 8px;
+      box-shadow: 0 0 24px rgba(0,200,255,0.4);
+      transition: transform 0.2s, box-shadow 0.2s;
+    }
+    .btn:hover { transform: translateY(-2px); box-shadow: 0 0 40px rgba(0,200,255,0.6); }
+    .footer { margin-top: 28px; font-size: 12px; color: rgba(255,255,255,0.3); letter-spacing: 1px; }
+    .pod-info {
+      position: fixed; bottom: 18px; left: 50%; transform: translateX(-50%);
+      background: rgba(0,0,0,0.5); border: 1px solid rgba(0,200,255,0.2);
+      color: rgba(255,255,255,0.5); font-size: 11px; padding: 6px 18px;
+      border-radius: 20px; letter-spacing: 1px;
+    }
+  </style>
+</head>
+<body>
+  <div class="badge">🟢 LOGIN SERVICE</div>
+  <div class="card">
+    <div class="icon">🔐</div>
+    <div class="app-name">HiQode Platform</div>
+    <h1>Welcome Back</h1>
+    <div class="field">
+      <label>Email Address</label>
+      <input type="email" placeholder="you@hiqode.com">
+    </div>
+    <div class="field">
+      <label>Password</label>
+      <input type="password" placeholder="••••••••">
+    </div>
+    <button class="btn">LOGIN →</button>
+    <div class="footer">INGRESS DEMO &nbsp;|&nbsp; PATH: /</div>
+  </div>
+  <div class="pod-info">📦 Pod: login-app &nbsp;|&nbsp; Namespace: hiqode</div>
+</body>
+</html>

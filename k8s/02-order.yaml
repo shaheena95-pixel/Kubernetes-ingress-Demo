@@ -1,0 +1,57 @@
+# ─────────────────────────────────────────────
+#  ORDER APP — Deployment + Service
+#  kubectl apply -f 02-order.yaml
+#
+#  NOTE: Replace <AWS_ACCOUNT_ID> and <REGION>
+#        with your actual ECR values
+#  ECR image format:
+#  <AWS_ACCOUNT_ID>.dkr.ecr.<REGION>.amazonaws.com/order-app:v1
+# ─────────────────────────────────────────────
+
+apiVersion: apps/v1
+kind: Deployment
+metadata:
+  name: order-deployment
+  namespace: hiqode
+  labels:
+    app: order-app
+spec:
+  replicas: 2
+  selector:
+    matchLabels:
+      app: order-app
+  template:
+    metadata:
+      labels:
+        app: order-app
+    spec:
+      containers:
+        - name: order-app
+          image: 865189140490.dkr.ecr.us-east-1.amazonaws.com/order-app:v1
+          ports:
+            - containerPort: 80
+          resources:
+            requests:
+              cpu: "50m"
+              memory: "64Mi"
+            limits:
+              cpu: "100m"
+              memory: "128Mi"
+
+---
+
+apiVersion: v1
+kind: Service
+metadata:
+  name: order-service
+  namespace: hiqode
+  labels:
+    app: order-app
+spec:
+  selector:
+    app: order-app
+  ports:
+    - protocol: TCP
+      port: 80          # Service port
+      targetPort: 80    # Container port
+  type: ClusterIP       # Internal only — Ingress will expose it

@@ -1,0 +1,57 @@
+# ─────────────────────────────────────────────
+#  PAYMENT APP — Deployment + Service
+#  kubectl apply -f 03-payment.yaml
+#
+#  NOTE: Replace <AWS_ACCOUNT_ID> and <REGION>
+#        with your actual ECR values
+#  ECR image format:
+#  <AWS_ACCOUNT_ID>.dkr.ecr.<REGION>.amazonaws.com/payment-app:v1
+# ─────────────────────────────────────────────
+
+apiVersion: apps/v1
+kind: Deployment
+metadata:
+  name: payment-deployment
+  namespace: hiqode
+  labels:
+    app: payment-app
+spec:
+  replicas: 2
+  selector:
+    matchLabels:
+      app: payment-app
+  template:
+    metadata:
+      labels:
+        app: payment-app
+    spec:
+      containers:
+        - name: payment-app
+          image: 865189140490.dkr.ecr.us-east-1.amazonaws.com/payment-app:v1
+          ports:
+            - containerPort: 80
+          resources:
+            requests:
+              cpu: "50m"
+              memory: "64Mi"
+            limits:
+              cpu: "100m"
+              memory: "128Mi"
+
+---
+
+apiVersion: v1
+kind: Service
+metadata:
+  name: payment-service
+  namespace: hiqode
+  labels:
+    app: payment-app
+spec:
+  selector:
+    app: payment-app
+  ports:
+    - protocol: TCP
+      port: 80          # Service port
+      targetPort: 80    # Container port
+  type: ClusterIP       # Internal only — Ingress will expose it
