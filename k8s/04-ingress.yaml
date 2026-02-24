@@ -32,6 +32,7 @@ metadata:
     alb.ingress.kubernetes.io/listen-ports: '[{"HTTP": 80}]'   # ── ALB Listener port ─
     alb.ingress.kubernetes.io/healthcheck-path: /  # ── Health check path ──
     alb.ingress.kubernetes.io/tags: Environment=demo,Team=hiqode  # ── Tags on the ALB (optional but good practice) ──
+    alb.ingress.kubernetes.io/rewrite-target: /
 spec:
   ingressClassName: alb         # ← NEW WAY (replaces the annotation)
   rules:
