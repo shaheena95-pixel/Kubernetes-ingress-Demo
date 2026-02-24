@@ -45,7 +45,9 @@ aws ecr create-repository --repository-name payment-app --region <REGION>
 # LOGIN APP
 cd login-app
 docker build -t login-app .
-docker tag login-app:latest 865189140490.dkr.ecr.us-east-1.amazonaws.com/login-app:v1
+# docker tag login-app:latest <AWS_ACCOUNT_ID>.dkr.ecr.<REGION>.amazonaws.com/login-app:v1
+docker tag login-app:latest 865189140490.dkr.ecr.us-east-1.amazonaws.com/login-app:v1 
+# docker push <AWS_ACCOUNT_ID>.dkr.ecr.<REGION>.amazonaws.com/login-app:v1
 docker push 865189140490.dkr.ecr.us-east-1.amazonaws.com/login-app:v1
 cd ..
 
