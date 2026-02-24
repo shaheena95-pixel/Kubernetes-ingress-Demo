@@ -27,7 +27,7 @@ spec:
     spec:
       containers:
         - name: login-app
-          image: 865189140490.dkr.ecr.us-east-1.amazonaws.com/login-app:v1
+          image: 865189140490.dkr.ecr.us-east-1.amazonaws.com/login-app:v3
           ports:
             - containerPort: 80
           resources:
