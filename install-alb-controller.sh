@@ -48,6 +48,7 @@ eksctl utils associate-iam-oidc-provider --region us-east-1  --cluster my-eks-cl
 #  STEP 2 — Add EKS Helm Repo
 # ─────────────────────────────────────────────
 
+Install Hem - curl https://raw.githubusercontent.com/helm/helm/main/scripts/get-helm-3 | bash
 helm repo add eks https://aws.github.io/eks-charts
 helm repo update
 
