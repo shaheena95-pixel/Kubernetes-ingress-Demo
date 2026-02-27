@@ -188,8 +188,8 @@ aws iam create-policy \
 # ───────────────────────────────────────────────────────────────────────────
 
 aws iam attach-role-policy \
-  --role-name eksctl-my-eks-cluster-nodegroup-my-NodeInstanceRole-zmPRf39npNpJ \
-  --policy-arn arn:aws:iam::865189140490:policy/AWSLoadBalancerControllerIAMPolicy \
+  --role-name eksctl-my-eks-cluster30-nodegroup--NodeInstanceRole-8gjXQaUhReTI\
+  --policy-arn arn:aws:iam::773391562788:policy/AWSLoadBalancerControllerIAMPolicy \
   --region us-east-1
 
 # Verify — you should see AWSLoadBalancerControllerIAMPolicy in the output
