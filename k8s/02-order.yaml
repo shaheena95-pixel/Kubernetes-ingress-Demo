@@ -27,7 +27,7 @@ spec:
     spec:
       containers:
         - name: order-app
-          image: 865189140490.dkr.ecr.us-east-1.amazonaws.com/order-app:v3
+          image: 773391562788.dkr.ecr.us-east-1.amazonaws.com/sha:order1
           ports:
             - containerPort: 80
           resources:
