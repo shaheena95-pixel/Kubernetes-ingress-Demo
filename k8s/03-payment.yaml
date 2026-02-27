@@ -27,7 +27,7 @@ spec:
     spec:
       containers:
         - name: payment-app
-          image: 865189140490.dkr.ecr.us-east-1.amazonaws.com/payment-app:v3
+          image:  773391562788.dkr.ecr.us-east-1.amazonaws.com/sha:payment1
           ports:
             - containerPort: 80
           resources:
